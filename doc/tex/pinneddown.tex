@@ -56,8 +56,10 @@ main phase (or during the attack phase in case of some effects). Players may
 show their hands to each other whenever they want to.
 
 Every time a player is forced to discard a card, either from play or from his or
-her hand, that card goes to that player's \emph{discard pile}. Players may have
-a look at their discard piles at any time.
+her hand, that card goes to that player's \emph{discard pile}. All player ships
+that are destroyed in battle go to their owning player's \emph{destroyed pile}.
+No player may play copies of unique ships in destroyed piles. Players may have a
+look at their discard and destroyed piles at any time.
 
 The \emph{attack deck} contains all cards that represent the opposition the
 players have to face. The players must not look at the cards in the attack deck
@@ -75,7 +77,9 @@ deck unless a card allows them to.
 
 Every time a player starship is damaged, cards in the \emph{damage deck} tell
 how the attributes of that starship are affected, and if the ship is finally
-destroyed, or not.
+destroyed, or not. Discarded damage cards go to the \emph{damage discard pile}.
+If any ship is damaged and the damage deck is empty, the damage discard pile
+is shuffled turned face down, making up the new damage deck.
 
 \section{Game Setup}
 
@@ -86,7 +90,6 @@ game:
   \item Every player puts his or her flagship into play.
   \item Every player shuffles his or her draw deck and draws four cards.
   \item The players shuffle the attack, location and damage decks.
-  \item The effect Puppy Protection is put into play with two tokens.
 \end{enumerate}
 
 \section{Card Types}
@@ -112,9 +115,7 @@ the game.
 
 Characters can be deployed to any starship of a player's fleet and provide
 special abilities like playing cards from the draw deck or retrieving cards from
-the discard pile. They can move to any other player starship on the table and
-may contribute to meeting the requirements of certain effects using their
-\emph{teamwork} value.
+the discard pile. They can move to any other player starship on the table.
 
 Some characters are \emph{captains} of specific starships: They increase the
 power of their ships by two while aboard.
@@ -176,7 +177,6 @@ of the player fleet, and its game text takes effect immediately, replacing the
 game text of the previous location.
 
 \subsection{Attack Phase}
-\subsubsection{Determining Attack Strength}
 
 At the beginning of the attack phase, the threat of the current location is
 added, as well as one additional threat for each player starship.
@@ -186,7 +186,7 @@ removing their cost from the threat pool. If a card is revealed the cost of
 which exceeds the number of tokens in the threat pool, the card is ignored and
 discarded, and the players stop revealing cards.
 
-\subsubsection{Assigning Defenders}
+\subsection{Assignment Phase}
 
 Players assign their starships to the attackers according to the following
 rules:
@@ -201,16 +201,17 @@ remaining enemy ships are randomly assigned to any fight, i.e. by rolling two
 dice, one for the attacked player and one for the attacked ship.
 \end{itemize}
 
-\subsubsection{Resolving Attack}
+\subsection{Fight Phase}
 
 The players resolve all fights, one at a time, in an order decided by them.
+Each fight is resolved in a dedicated fight phase.
 
 \begin{itemize}
  \item If the total power of all player ships is greater than the total power of
 the enemy ships, the players win and the enemy ships are discarded.
  \item If the total power of the player ships is less than or equal to the total
 power of the enemy ones, all player ships in that fight are \emph{damaged}: For
-each ship damaged this way, the players draw two cards from the damage deck.
+each ship damaged this way, the players draw a cards from the damage deck.
 These cards take effect immediately. If the total number of characters and/or
 equipment cards exceeds a damaged ship's capacity, they have to be discarded at
 random until the capacity restrictions are met again. Damage cards remain until
@@ -234,17 +235,30 @@ the game.
 \section{Other Important Rules}
 \subsection{Uniqueness}
 
-\emph{Unique} cards may not be deployed as long as any other copy of that card
-is in play.
+A small dot next to a card's name indicates that card is \emph{unique}: Unique
+cards may not be deployed as long as any other copy of that card is in play or
+in any destroyed pile.
 
 \subsection{Overloading}
 
 Some game texts may require the players to \emph{overload} a ship. This is done
 by attaching the top card of the damage deck to that ship. Ships can be
-destroyed by overloading them.
+destroyed by overloading them. Damage taken from overloading cannot be
+prevented.
+
+\subsection{Repairing}
+
+If a starship is \emph{repaired}, the players choose any attached damage
+card to be discarded.
 
 \subsection{Cloaking}
+
 Ships with \emph{cloaking} may choose not to participate at the attack phase.
+
+\subsection{Spare Parts}
+
+During the main phase, any player may discard a starship from hand to repair
+a ship of the same type.
 
 \section{Deck Construction Rules}
 
@@ -320,6 +334,20 @@ phase now, as players would avoid adding threat else.
 system on all other fights was far too strong. If the number of attacking
 ships exceeds the number of defenders now, they're randomly assigned to
 non-cloaked player ships.
+\end{itemize}
+
+\subsection{June 29, 2011}
+
+\begin{itemize}
+ \item Introduced destroyed piles for distinguishing discarded ship
+cards from destroyed ships.
+ \item Removed Puppy Protection as its effect is now granted by one of the
+player flagships.
+ \item Split the attack phase into three phases for easier reference by effect
+timings.
+ \item Added the spare parts rule that allows easier deck building.
+ \item Removed teamwork from the game, as the game's focus is clearly on
+fighting enemy ships and using effects and special powers to survive.
 \end{itemize}
 
 \end{document}
