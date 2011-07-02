@@ -94,7 +94,8 @@ of the draw deck.
 
 The \emph{hand} of each player contains the cards he or she may play during the
 main phase (or during the attack phase in case of some effects). Players may
-show their hands to each other whenever they want to.
+show their hands to each other whenever they want to. There's no limit on the
+number of cards in a player's hand.
 
 Every time a player is forced to discard a card, either from play or from his or
 her hand, that card goes to that player's \emph{discard pile}. All player ships
@@ -180,7 +181,8 @@ enhance the ship they're aboard in some way.
 Starships are required to face the enemy attacks every turn. They use their
 \emph{power} value to fight against attacking ships during the attack phase.
 Starships can carry the number of characters and/or equipment cards specified by
-their \emph{capacity} value.
+their \emph{capacity} value. No player may have more than five starships in play
+at any time.
 
 \subsection{Locations}
 
@@ -237,8 +239,8 @@ rules:
 remaining player ships may be assigned to join any fight, summing up their
 power.
  \item If the number of attackers exceeds the number of player starships, the
-remaining enemy ships are randomly assigned to any fight, i.e. by rolling two
-dice, one for the attacked player and one for the attacked ship.
+remaining enemy ships are assigned one by one to the fights the enemies have
+the lowest power in, in order of their power (lowest power ships first).
 \end{itemize}
 
 \subsection{Fight Phase}
@@ -291,6 +293,17 @@ prevented.
 If a starship is \emph{repaired}, the players choose any attached damage
 card to be discarded.
 
+\subsection{Drawing Battle Desinity}
+
+If a ship is allowed to draw \emph{battle destiny}, the players reveal the top
+card of the attack deck, add its threat to the ship's power and discard that
+card.
+
+\subsection{Upkeep}
+
+The \emph{upkeep} value of each player ship is added to the threat pool at the
+beginning of each jump phase.
+
 \subsection{Cloaking}
 
 Ships with \emph{cloaking} may choose not to participate at the attack phase.
@@ -304,6 +317,43 @@ a ship of the same type.
 
 The minimum draw deck size is 40 cards. A deck must not contain any card more
 than four times.
+
+\section{Inspirations}
+
+Fans will note that Pinned Down is clearly inspired by the Lord of the Rings
+Trading Card Game by Decipher Inc., definitely the greatest trading card game
+I've ever played. Credit must be paid.
+
+The player fleets are led by a flagship of their choice and pass different
+locations on their journey. Their ships are enhanced by equipment and effects,
+and every time the players lose a fight, their ships get damaged and have to be
+repaired. They can overload their ships to gain special benefits, and there's no
+way of recovering destroyed ships at all. The stronger the players get, the
+greater is the opposition they have to face as they advance.
+
+The main difference between the two games is that Pinned Down is cooperative,
+whereas Lord of the Rings obviously is not. Furthermore, there is no One Ring
+in Pinned Down of course, and no similar mechanic to protect (or corrupt) the
+flagship. Finally, there's no archery phase in Pinned Down, as all ships use
+long-range weapons, and there are no ally cards - the players support each
+other instead.
+
+Other mechanics like cloaking ships, having them enhanced by their matching
+commander or reducing their attributes by damage cards are derived from similar
+mechanics in the Star Trek Customizable Card Game, another great trading card
+game by Decipher. The initial version of Pinned Down contained some kind of
+location spaceline and additional challenges to be solved using the teamwork
+values of characters, too, but these mechanics have been removed because they
+didn't really seem to add fun to the game. The focus of Pinned Down clearly is
+on collaborating, on discussing decisions and planning the use of limited
+resources, as well as finding clever ship fight assignments.
+
+The terms battle destiny and upkeep are borrowed from the Star Wars Customizable
+Card Game and Magic: The Gathering, respectively. Giving the players the chance
+to choose the location to jump to pretty much works like in Battlestar
+Galactica: The Board Game, and the idea of assigning different roles to the
+players has been taken from Pandemic. Both are amazing (semi-)cooperative games
+that led to the idea of creating this game.
 
 \section{Design History}
 \subsection{June 5, 2011}
@@ -389,5 +439,17 @@ timings.
  \item Removed teamwork from the game, as the game's focus is clearly on
 fighting enemy ships and using effects and special powers to survive.
 \end{itemize}
+
+\subsection{July 1, 2011}
+
+\begin{itemize}
+ \item Players may not have more than five ships in their fleet, in order to
+recude the length of each turn and assure that the game's scaling isn't broken.
+ \item Assigining remaining enemy ships is now deterministic. Players should be
+able to plan their fights.
+ \item Added drawing battle destiny and upkeep mechanics.
+ \item Added references to all games that inspired Pinned Down.
+\end{itemize}
+
 
 \end{document}
