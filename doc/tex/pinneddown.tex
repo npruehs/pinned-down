@@ -5,6 +5,7 @@
 \usepackage[english]{babel}
 \usepackage{hyperref}
 \usepackage{setspace}
+\usepackage{graphicx}
 
 \title{Pinned Down}
 \author{Nick Pruehs}
@@ -159,6 +160,12 @@ Characters can be deployed to any starship of a player's fleet and provide
 special abilities like playing cards from the draw deck or retrieving cards from
 the discard pile. They can move to any other player starship on the table.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{examplecharacter.png}
+  \caption{A character card.}
+\end{figure}
+
 Some characters are \emph{captains} of specific starships: They increase the
 power of their ships by two while aboard.
 
@@ -166,6 +173,12 @@ power of their ships by two while aboard.
 
 Effects may be played at any time if they don't add threat. Effects with a
 threat value greater than zero may only be played during the main phase.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{exampleeffect.png}
+  \caption{An effect card.}
+\end{figure}
 
 All effects take effect immediately and are discarded afterwards, unless they
 state otherwise.
@@ -176,13 +189,27 @@ Just like characters, equipment cards can be deployed to any starship of a
 player's fleet, and they can move to any other player starship. They usually
 enhance the ship they're aboard in some way.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{exampleequipment.png}
+  \caption{An equipment card.}
+\end{figure}
+
 \subsection{Starships}
 
 Starships are required to face the enemy attacks every turn. They use their
 \emph{power} value to fight against attacking ships during the attack phase.
 Starships can carry the number of characters and/or equipment cards specified by
-their \emph{capacity} value. No player may have more than five starships in play
-at any time.
+their \emph{capacity} value.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{examplestarship.png}
+  \caption{A starship card.}
+\end{figure}
+
+No player may have more than five starships in play at any time (the limit for
+Ac'arr players is seven).
 
 \subsection{Locations}
 
@@ -190,11 +217,23 @@ Location cards are used to illustrate the journey the player fleet makes. If
 the players have covered a \emph{distance} of ten or more and survive the turn,
 they win the game.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{examplelocation.png}
+  \caption{A location card.}
+\end{figure}
+
 \subsection{Damage Cards}
 
 Damage cards are put below damaged starships, reducing their power and capacity
 values. Most damage cards have an additional effect, like preventing the ship
 from overloading or from gaining any power bonuses.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{exampledamage.png}
+  \caption{A damage card.}
+\end{figure}
 
 \section{Turn Sequence}
 
