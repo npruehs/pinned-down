@@ -91,13 +91,13 @@ namespace PinnedDownCardListEditor.View
         /// <summary>
         /// Gets the affiliation the card currently being added or edited belongs to.
         /// </summary>
-        public Affiliation Affiliation
+        public string Affiliation
         {
             get
             {
                 if (comboBoxAffiliation.SelectedItem != null)
                 {
-                    return (Affiliation)comboBoxAffiliation.SelectedItem;
+                    return (string)comboBoxAffiliation.SelectedItem;
                 }
                 else
                 {
@@ -243,7 +243,7 @@ namespace PinnedDownCardListEditor.View
                 case Card.CardType.Character:
                     Character c = (Character)card;
 
-                    comboBoxAffiliation.SelectedIndex = (int)c.Affiliation;
+                    comboBoxAffiliation.SelectedIndex = comboBoxAffiliation.FindString(c.Affiliation);
                     numericUpDownThreat.Value = c.Threat;
                     numericUpDownPower.Value = c.PowerBonus;
                     numericUpDownCapacity.Value = c.CapacityBonus;
@@ -260,14 +260,14 @@ namespace PinnedDownCardListEditor.View
                 case Card.CardType.Effect:
                     Effect e = (Effect)card;
 
-                    comboBoxAffiliation.SelectedIndex = (int)e.Affiliation;
+                    comboBoxAffiliation.SelectedIndex = comboBoxAffiliation.FindString(e.Affiliation);
                     numericUpDownThreat.Value = e.Threat;
                     break;
 
                 case Card.CardType.Equipment:
                     Equipment eq = (Equipment)card;
 
-                    comboBoxAffiliation.SelectedIndex = (int)eq.Affiliation;
+                    comboBoxAffiliation.SelectedIndex = comboBoxAffiliation.FindString(eq.Affiliation);
                     numericUpDownThreat.Value = eq.Threat;
                     numericUpDownPower.Value = eq.PowerBonus;
                     numericUpDownCapacity.Value = eq.CapacityBonus;
@@ -284,7 +284,7 @@ namespace PinnedDownCardListEditor.View
                 case Card.CardType.Starship:
                     Starship s = (Starship)card;
 
-                    comboBoxAffiliation.SelectedIndex = (int)s.Affiliation;
+                    comboBoxAffiliation.SelectedIndex = comboBoxAffiliation.FindString(s.Affiliation);
                     numericUpDownThreat.Value = s.Threat;
                     numericUpDownPower.Value = s.Power;
                     numericUpDownCapacity.Value = s.Capacity;
@@ -314,9 +314,7 @@ namespace PinnedDownCardListEditor.View
 
             comboBoxCardType.SelectedIndex = 0;
 
-            IEnumerable<Affiliation> affiliations = Enum.GetValues(typeof(Affiliation)).Cast<Affiliation>();
-
-            foreach (Affiliation aff in affiliations)
+            foreach (string aff in Card.Affiliations)
             {
                 comboBoxAffiliation.Items.Add(aff);
             }

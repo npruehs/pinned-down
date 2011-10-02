@@ -28,7 +28,7 @@ namespace PinnedDownModel.Cards
         /// <summary>
         /// Gets or sets the affiliation that can cause this effect.
         /// </summary>
-        public Affiliation Affiliation { get; set; }
+        public string Affiliation { get; set; }
 
         /// <summary>
         /// Gets or sets the threat this effect generates when it enters play.
@@ -55,7 +55,7 @@ namespace PinnedDownModel.Cards
         /// <param name="threat">
         /// The threat the new effect generates when it enters play.
         /// </param>
-        public Effect(Affiliation affiliation, int threat)
+        public Effect(string affiliation, int threat)
             : this()
         {
             Affiliation = affiliation;

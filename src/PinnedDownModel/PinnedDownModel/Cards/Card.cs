@@ -26,6 +26,12 @@ namespace PinnedDownModel.Cards
     public abstract class Card
     {
         /// <summary>
+        /// The list of valid affiliations of a Pinned Down card.
+        /// </summary>
+        public static readonly string[] Affiliations =
+            { "Ac'arr", "Blue Wing", "Enemy", "Purple Wing", "Red Wing" };
+
+        /// <summary>
         /// The type of a Pinned Down card, describing how it is used in the
         /// game and which rules apply to it.
         /// </summary>

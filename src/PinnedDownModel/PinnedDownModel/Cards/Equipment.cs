@@ -28,7 +28,7 @@ namespace PinnedDownModel.Cards
         /// <summary>
         /// Gets or sets the affiliation using this equipment.
         /// </summary>
-        public Affiliation Affiliation { get; set; }
+        public string Affiliation { get; set; }
 
         /// <summary>
         /// Gets or sets the threat this equipment generates when it enters
@@ -76,7 +76,7 @@ namespace PinnedDownModel.Cards
         /// The capacity bonus the new equipment provides for its equipping
         /// ship.
         /// </param>
-        public Equipment(Affiliation affiliation, int threat, int powerBonus, int capacityBonus)
+        public Equipment(string affiliation, int threat, int powerBonus, int capacityBonus)
             : this()
         {
             Affiliation = affiliation;

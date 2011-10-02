@@ -90,6 +90,11 @@ namespace PinnedDownCardListEditor.View
             dataGridView.Columns.Add("capacity", "Capacity");
             dataGridView.Columns.Add("distance", "Distance");
             dataGridView.Columns.Add("text", "Game Text");
+
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
         #endregion
 
@@ -123,13 +128,17 @@ namespace PinnedDownCardListEditor.View
                         dataGridView.Rows[i].Cells["threat"].Value = c.Threat;
                         dataGridView.Rows[i].Cells["power"].Value = c.PowerBonus;
                         dataGridView.Rows[i].Cells["capacity"].Value = c.CapacityBonus;
+                        dataGridView.Rows[i].Cells["distance"].Value = "-";
                         break;
 
                     case Card.CardType.Damage:
                         Damage d = (Damage)card;
 
+                        dataGridView.Rows[i].Cells["affiliation"].Value = "-";
+                        dataGridView.Rows[i].Cells["threat"].Value = "-";
                         dataGridView.Rows[i].Cells["power"].Value = d.PowerMalus;
                         dataGridView.Rows[i].Cells["capacity"].Value = d.CapacityMalus;
+                        dataGridView.Rows[i].Cells["distance"].Value = "-";
                         dataGridView.Rows[i].Cells["text"].Value = "STRUCTURE -" + d.StructureMalus + "%. " + d.GameText;
                         break;
 
@@ -138,6 +147,9 @@ namespace PinnedDownCardListEditor.View
 
                         dataGridView.Rows[i].Cells["affiliation"].Value = e.Affiliation;
                         dataGridView.Rows[i].Cells["threat"].Value = e.Threat;
+                        dataGridView.Rows[i].Cells["power"].Value = "-";;
+                        dataGridView.Rows[i].Cells["capacity"].Value = "-";
+                        dataGridView.Rows[i].Cells["distance"].Value = "-";
                         break;
 
                     case Card.CardType.Equipment:
@@ -147,11 +159,16 @@ namespace PinnedDownCardListEditor.View
                         dataGridView.Rows[i].Cells["threat"].Value = eq.Threat;
                         dataGridView.Rows[i].Cells["power"].Value = eq.PowerBonus;
                         dataGridView.Rows[i].Cells["capacity"].Value = eq.CapacityBonus;
+                        dataGridView.Rows[i].Cells["distance"].Value = "-";
                         break;
 
                     case Card.CardType.Location:
                         Location l = (Location)card;
 
+                        dataGridView.Rows[i].Cells["affiliation"].Value = "-";
+                        dataGridView.Rows[i].Cells["threat"].Value = "-";
+                        dataGridView.Rows[i].Cells["power"].Value = "-";
+                        dataGridView.Rows[i].Cells["capacity"].Value = "-";
                         dataGridView.Rows[i].Cells["distance"].Value = l.Distance;
                         dataGridView.Rows[i].Cells["text"].Value = l.LocationType.ToString().ToUpper() + ". " + l.GameText;
                         break;
@@ -163,6 +180,7 @@ namespace PinnedDownCardListEditor.View
                         dataGridView.Rows[i].Cells["threat"].Value = s.Threat;
                         dataGridView.Rows[i].Cells["power"].Value = s.Power;
                         dataGridView.Rows[i].Cells["capacity"].Value = s.Capacity;
+                        dataGridView.Rows[i].Cells["distance"].Value = "-";
                         dataGridView.Rows[i].Cells["type"].Value = s.Type + " - " + s.ShipClass;
                         dataGridView.Rows[i].Cells["text"].Value = (s.Flagship ? "FLAGSHIP. " : "") + s.GameText;
                         break;

@@ -28,7 +28,7 @@ namespace PinnedDownModel.Cards
         /// <summary>
         /// Gets or sets the affiliation using this starship.
         /// </summary>
-        public Affiliation Affiliation { get; set; }
+        public string Affiliation { get; set; }
 
         /// <summary>
         /// Gets or sets the threat this starship generates when it enters
@@ -95,7 +95,7 @@ namespace PinnedDownModel.Cards
         /// Whether a player may start the game with the new ship in play, or
         /// not.
         /// </param>
-        public Starship(Affiliation affiliation, int threat, int power, int capacity, string shipClass, bool flagship)
+        public Starship(string affiliation, int threat, int power, int capacity, string shipClass, bool flagship)
             : this()
         {
             Affiliation = affiliation;

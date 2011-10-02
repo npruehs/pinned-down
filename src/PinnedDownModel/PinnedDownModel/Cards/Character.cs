@@ -28,7 +28,7 @@ namespace PinnedDownModel.Cards
         /// <summary>
         /// Gets or sets the affiliation this character belongs to.
         /// </summary>
-        public Affiliation Affiliation { get; set; }
+        public string Affiliation { get; set; }
 
         /// <summary>
         /// Gets or sets the threat this character generates when it enters
@@ -76,7 +76,7 @@ namespace PinnedDownModel.Cards
         /// <param name="capacityBonus">
         /// The capacity bonus the new character provides for its manned ship.
         /// </param>
-        public Character(Affiliation affiliation, int threat, int powerBonus, int capacityBonus)
+        public Character(string affiliation, int threat, int powerBonus, int capacityBonus)
             : this()
         {
             Affiliation = affiliation;
