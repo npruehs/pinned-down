@@ -199,6 +199,7 @@ namespace PinnedDownCardListEditor.Control
         public void CardFormAccept(bool editCard)
         {
             Card card = null;
+            int rowIndex;
 
             try
             {
@@ -259,16 +260,21 @@ namespace PinnedDownCardListEditor.Control
                 if (editCard)
                 {
                     cards[cardBeingEdited] = card;
+
+                    // update view
+                    mainForm.EditCardTableEntry(cardBeingEdited, card);
                 }
                 else
                 {
                     cards.Add(card);
+
+                    // update view
+                    rowIndex = mainForm.AddNewCardToTable(card);
+                    mainForm.CardTable.CurrentCell = mainForm.CardTable[0, rowIndex];
                 }
 
-                // update view
+                // hide card form
                 cardForm.Hide();
-
-                mainForm.UpdateCardTable(cards);
             }
             catch (InvalidOperationException e)
             {

@@ -112,79 +112,110 @@ namespace PinnedDownCardListEditor.View
 
             foreach (Card card in cards)
             {
-                int i = dataGridView.Rows.Add();
+                AddNewCardToTable(card);
+            }
+        }
 
-                dataGridView.Rows[i].Cells["index"].Value = card.Index;
-                dataGridView.Rows[i].Cells["name"].Value = (card.Unique ? "*" : "") + card.Name;
-                dataGridView.Rows[i].Cells["type"].Value = card.Type;
-                dataGridView.Rows[i].Cells["text"].Value = card.GameText;
+        /// <summary>
+        /// Adds the passed card to the card table.
+        /// </summary>
+        /// <param name="card">
+        /// The card to add.
+        /// </param>
+        /// <returns>
+        /// The row index of the card within the table.
+        /// </returns>
+        public int AddNewCardToTable(Card card)
+        {
+            int i = dataGridView.Rows.Add();
 
-                switch (card.Type)
-                {
-                    case Card.CardType.Character:
-                        Character c = (Character)card;
+            EditCardTableEntry(i, card);
 
-                        dataGridView.Rows[i].Cells["affiliation"].Value = c.Affiliation;
-                        dataGridView.Rows[i].Cells["threat"].Value = c.Threat;
-                        dataGridView.Rows[i].Cells["power"].Value = c.PowerBonus;
-                        dataGridView.Rows[i].Cells["capacity"].Value = c.CapacityBonus;
-                        dataGridView.Rows[i].Cells["distance"].Value = "-";
-                        break;
+            return i;
+        }
 
-                    case Card.CardType.Damage:
-                        Damage d = (Damage)card;
+        /// <summary>
+        /// Updates the card table row with the specified index by filling it
+        /// with the data of the passed card.
+        /// </summary>
+        /// <param name="index">
+        /// The index of the card table row to edit.
+        /// </param>
+        /// <param name="card">
+        /// The card to be shown in the specified row.
+        /// </param>
+        public void EditCardTableEntry(int index, Card card)
+        {
+            dataGridView.Rows[index].Cells["index"].Value = card.Index;
+            dataGridView.Rows[index].Cells["name"].Value = (card.Unique ? "*" : "") + card.Name;
+            dataGridView.Rows[index].Cells["type"].Value = card.Type;
+            dataGridView.Rows[index].Cells["text"].Value = card.GameText;
 
-                        dataGridView.Rows[i].Cells["affiliation"].Value = "-";
-                        dataGridView.Rows[i].Cells["threat"].Value = "-";
-                        dataGridView.Rows[i].Cells["power"].Value = d.PowerMalus;
-                        dataGridView.Rows[i].Cells["capacity"].Value = d.CapacityMalus;
-                        dataGridView.Rows[i].Cells["distance"].Value = "-";
-                        dataGridView.Rows[i].Cells["text"].Value = "STRUCTURE -" + d.StructureMalus + "%. " + d.GameText;
-                        break;
+            switch (card.Type)
+            {
+                case Card.CardType.Character:
+                    Character c = (Character)card;
 
-                    case Card.CardType.Effect:
-                        Effect e = (Effect)card;
+                    dataGridView.Rows[index].Cells["affiliation"].Value = c.Affiliation;
+                    dataGridView.Rows[index].Cells["threat"].Value = c.Threat;
+                    dataGridView.Rows[index].Cells["power"].Value = c.PowerBonus;
+                    dataGridView.Rows[index].Cells["capacity"].Value = c.CapacityBonus;
+                    dataGridView.Rows[index].Cells["distance"].Value = "-";
+                    break;
 
-                        dataGridView.Rows[i].Cells["affiliation"].Value = e.Affiliation;
-                        dataGridView.Rows[i].Cells["threat"].Value = e.Threat;
-                        dataGridView.Rows[i].Cells["power"].Value = "-";;
-                        dataGridView.Rows[i].Cells["capacity"].Value = "-";
-                        dataGridView.Rows[i].Cells["distance"].Value = "-";
-                        break;
+                case Card.CardType.Damage:
+                    Damage d = (Damage)card;
 
-                    case Card.CardType.Equipment:
-                        Equipment eq = (Equipment)card;
+                    dataGridView.Rows[index].Cells["affiliation"].Value = "-";
+                    dataGridView.Rows[index].Cells["threat"].Value = "-";
+                    dataGridView.Rows[index].Cells["power"].Value = d.PowerMalus;
+                    dataGridView.Rows[index].Cells["capacity"].Value = d.CapacityMalus;
+                    dataGridView.Rows[index].Cells["distance"].Value = "-";
+                    dataGridView.Rows[index].Cells["text"].Value = "STRUCTURE -" + d.StructureMalus + "%. " + d.GameText;
+                    break;
 
-                        dataGridView.Rows[i].Cells["affiliation"].Value = eq.Affiliation;
-                        dataGridView.Rows[i].Cells["threat"].Value = eq.Threat;
-                        dataGridView.Rows[i].Cells["power"].Value = eq.PowerBonus;
-                        dataGridView.Rows[i].Cells["capacity"].Value = eq.CapacityBonus;
-                        dataGridView.Rows[i].Cells["distance"].Value = "-";
-                        break;
+                case Card.CardType.Effect:
+                    Effect e = (Effect)card;
 
-                    case Card.CardType.Location:
-                        Location l = (Location)card;
+                    dataGridView.Rows[index].Cells["affiliation"].Value = e.Affiliation;
+                    dataGridView.Rows[index].Cells["threat"].Value = e.Threat;
+                    dataGridView.Rows[index].Cells["power"].Value = "-"; ;
+                    dataGridView.Rows[index].Cells["capacity"].Value = "-";
+                    dataGridView.Rows[index].Cells["distance"].Value = "-";
+                    break;
 
-                        dataGridView.Rows[i].Cells["affiliation"].Value = "-";
-                        dataGridView.Rows[i].Cells["threat"].Value = "-";
-                        dataGridView.Rows[i].Cells["power"].Value = "-";
-                        dataGridView.Rows[i].Cells["capacity"].Value = "-";
-                        dataGridView.Rows[i].Cells["distance"].Value = l.Distance;
-                        dataGridView.Rows[i].Cells["text"].Value = l.LocationType.ToString().ToUpper() + ". " + l.GameText;
-                        break;
+                case Card.CardType.Equipment:
+                    Equipment eq = (Equipment)card;
 
-                    case Card.CardType.Starship:
-                        Starship s = (Starship)card;
+                    dataGridView.Rows[index].Cells["affiliation"].Value = eq.Affiliation;
+                    dataGridView.Rows[index].Cells["threat"].Value = eq.Threat;
+                    dataGridView.Rows[index].Cells["power"].Value = eq.PowerBonus;
+                    dataGridView.Rows[index].Cells["capacity"].Value = eq.CapacityBonus;
+                    dataGridView.Rows[index].Cells["distance"].Value = "-";
+                    break;
 
-                        dataGridView.Rows[i].Cells["affiliation"].Value = s.Affiliation;
-                        dataGridView.Rows[i].Cells["threat"].Value = s.Threat;
-                        dataGridView.Rows[i].Cells["power"].Value = s.Power;
-                        dataGridView.Rows[i].Cells["capacity"].Value = s.Capacity;
-                        dataGridView.Rows[i].Cells["distance"].Value = "-";
-                        dataGridView.Rows[i].Cells["type"].Value = s.Type + " - " + s.ShipClass;
-                        dataGridView.Rows[i].Cells["text"].Value = (s.Flagship ? "FLAGSHIP. " : "") + s.GameText;
-                        break;
-                }
+                case Card.CardType.Location:
+                    Location l = (Location)card;
+
+                    dataGridView.Rows[index].Cells["affiliation"].Value = "-";
+                    dataGridView.Rows[index].Cells["threat"].Value = "-";
+                    dataGridView.Rows[index].Cells["power"].Value = "-";
+                    dataGridView.Rows[index].Cells["capacity"].Value = "-";
+                    dataGridView.Rows[index].Cells["distance"].Value = l.Distance;
+                    dataGridView.Rows[index].Cells["text"].Value = l.LocationType.ToString().ToUpper() + ". " + l.GameText;
+                    break;
+
+                case Card.CardType.Starship:
+                    Starship s = (Starship)card;
+
+                    dataGridView.Rows[index].Cells["affiliation"].Value = s.Affiliation;
+                    dataGridView.Rows[index].Cells["threat"].Value = s.Threat;
+                    dataGridView.Rows[index].Cells["power"].Value = s.Power;
+                    dataGridView.Rows[index].Cells["capacity"].Value = s.Capacity;
+                    dataGridView.Rows[index].Cells["distance"].Value = "-";
+                    dataGridView.Rows[index].Cells["type"].Value = s.Type + " - " + s.ShipClass;
+                    dataGridView.Rows[index].Cells["text"].Value = (s.Flagship ? "FLAGSHIP. " : "") + s.GameText;
+                    break;
             }
         }
 
