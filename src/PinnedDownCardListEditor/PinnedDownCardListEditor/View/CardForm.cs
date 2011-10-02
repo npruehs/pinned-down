@@ -214,6 +214,8 @@ namespace PinnedDownCardListEditor.View
             comboBoxCardType.Enabled = true;
 
             Show();
+            BringToFront();
+            WindowState = FormWindowState.Normal;
         }
 
         /// <summary>
@@ -294,6 +296,8 @@ namespace PinnedDownCardListEditor.View
             }
 
             Show();
+            BringToFront();
+            WindowState = FormWindowState.Normal;
         }
 
         /// <summary>
