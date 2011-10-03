@@ -9,7 +9,7 @@
 		
 		<!-- show download link -->
 		<p>
-			<a href="https://raw.github.com/npruehs/PinnedDown/master/resource/xml/cardlists/{/pdcl:CardList/pdcl:index}%20{/pdcl:CardList/pdcl:shortName}.pdcl">
+			<a href="https://raw.github.com/npruehs/PinnedDown/master/resource/xml/cardlists/{/pdcl:CardList/pdcl:index}%20{/pdcl:CardList/pdcl:shortName}.pdcl" target="_blank">
 				(Download this card list)
 			</a>
 		</p>
