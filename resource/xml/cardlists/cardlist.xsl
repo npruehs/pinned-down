@@ -4,27 +4,23 @@
 	xmlns:pdcl="http://pinneddown.org/cardlist">
 	
 	<xsl:template match="/">
-		<html>
-		<body>
-			<!-- show card list name -->
-			<h2><xsl:value-of select="pdcl:CardList/pdcl:longName"/></h2>
+		<!-- show card list name -->
+		<h2><xsl:value-of select="pdcl:CardList/pdcl:longName"/></h2>
+		
+		<!-- begin card list table -->
+		<table>
+			<tr align="left">
+				<th>Card Index</th>
+				<th>Card Name</th>
+				<th>Type</th>
+				<th>Affiliation</th>
+			</tr>
 			
-			<!-- begin card list table -->
-			<table>
-				<tr align="left">
-					<th>Card Index</th>
-					<th>Card Name</th>
-					<th>Type</th>
-					<th>Affiliation</th>
-				</tr>
-				
-				<!-- add cards -->
-				<xsl:for-each select="pdcl:CardList/pdcl:cards">
-					<xsl:apply-templates/> 
-				</xsl:for-each>
-			</table>
-		</body>
-		</html>
+			<!-- add cards -->
+			<xsl:for-each select="pdcl:CardList/pdcl:cards">
+				<xsl:apply-templates/> 
+			</xsl:for-each>
+		</table>
 	</xsl:template>
 
 	<xsl:template match="pdcl:Character|pdcl:Effect|pdcl:Equipment|pdcl:Starship|pdcl:Location|pdcl:Damage">
