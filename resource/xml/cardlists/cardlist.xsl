@@ -5,15 +5,15 @@
 	
 	<xsl:template match="/">
 		<!-- show card list name -->
-		<h2><xsl:value-of select="pdcl:CardList/pdcl:longName"/></h2>
+		<!--<h2><xsl:value-of select="pdcl:CardList/pdcl:longName"/></h2>-->
 		
 		<!-- begin card list table -->
 		<table>
 			<tr align="left">
-				<th>Card Index</th>
-				<th>Card Name</th>
-				<th>Type</th>
-				<th>Affiliation</th>
+				<th><b>Card Index</b></th>
+				<th><b>Card Name</b></th>
+				<th><b>Type</b></th>
+				<th><b>Affiliation</b></th>
 			</tr>
 			
 			<!-- add cards -->
