@@ -182,6 +182,27 @@ namespace PinnedDownCardListEditor.Control
         }
 
         /// <summary>
+        /// Sorts the card list for name, card type and affiliation and assigns
+        /// new indices to them.
+        /// </summary>
+        public void MenuEditSortAndRebuildIndices()
+        {
+            // List.Sort is unstable - have to use MergeSort instead...
+            MergeSortCardList.Sort(cards, MergeSortCardList.SortMode.Name);
+            MergeSortCardList.Sort(cards, MergeSortCardList.SortMode.CardType);
+            MergeSortCardList.Sort(cards, MergeSortCardList.SortMode.Affiliation);
+
+            // assign new card indices
+            for (int i = 0; i < cards.Count; i++)
+            {
+                cards[i].Index = i;
+            }
+
+            // update view
+            mainForm.UpdateCardTable(cards);
+        }
+
+        /// <summary>
         /// Shows the About Box of this application.
         /// </summary>
         public void MenuHelpAbout()
@@ -266,6 +287,8 @@ namespace PinnedDownCardListEditor.Control
                 }
                 else
                 {
+                    card.Index = cards.Count;
+
                     cards.Add(card);
 
                     // update view

@@ -261,6 +261,17 @@ namespace PinnedDownCardListEditor.View
         }
 
         /// <summary>
+        /// Notifies the controller that the user wants to sort the card list
+        /// and rebuild the indices.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void sortAndRebuildIndicesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controller.MenuEditSortAndRebuildIndices();
+        }
+
+        /// <summary>
         /// Notifies the controller that the user wants to see the About Box.
         /// </summary>
         /// <param name="sender">Ignored.</param>
@@ -299,6 +310,17 @@ namespace PinnedDownCardListEditor.View
         private void toolStripButtonSaveCardList_Click(object sender, EventArgs e)
         {
             controller.MenuFileSave();
+        }
+
+        /// <summary>
+        /// Notifies the controller that the user wants to sort the card list
+        /// and rebuild the indices.
+        /// </summary>
+        /// <param name="sender">Ignored.</param>
+        /// <param name="e">Ignored.</param>
+        private void toolStripButtonSortAndRebuildIndices_Click(object sender, EventArgs e)
+        {
+            controller.MenuEditSortAndRebuildIndices();
         }
 
         /// <summary>

@@ -80,5 +80,12 @@ namespace PinnedDownCardListEditor.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        internal static System.Drawing.Bitmap SortHS {
+            get {
+                object obj = ResourceManager.GetObject("SortHS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

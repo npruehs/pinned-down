@@ -73,5 +73,35 @@ namespace PinnedDownModel.Cards
         /// and which effect it has on the game.
         /// </summary>
         public string GameText { get; set; }
+
+
+        /// <summary>
+        /// Returns the affiliation of this card, if it's a character, an
+        /// effect, an equipment or a starship, and an empty string otherwise.
+        /// </summary>
+        /// <returns>
+        /// The affiliation of this card, if any, and an empty string
+        /// otherwise.
+        /// </returns>
+        public string GetAffiliation()
+        {
+            switch (Type)
+            {
+                case Card.CardType.Character:
+                    return ((Character)this).Affiliation;
+
+                case Card.CardType.Effect:
+                    return ((Effect)this).Affiliation;
+
+                case Card.CardType.Equipment:
+                    return ((Equipment)this).Affiliation;
+
+                case Card.CardType.Starship:
+                    return ((Starship)this).Affiliation;
+
+                default:
+                    return "";
+            }
+        }
     }
 }
