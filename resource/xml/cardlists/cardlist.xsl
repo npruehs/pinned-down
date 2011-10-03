@@ -30,7 +30,7 @@
 			
 			<!-- show card name -->
 			<td>
-				<a href="https://github.com/npruehs/PinnedDown/raw/master/resource/png/cards/{/pdcl:CardList/pdcl:index}%20{/pdcl:CardList/pdcl:shortName}/{pdcl:Affiliation}/{pdcl:Type}/{pdcl:Name}.png">
+				<a href="https://github.com/npruehs/PinnedDown/raw/master/resource/png/cards/{/pdcl:CardList/pdcl:index}%20{/pdcl:CardList/pdcl:shortName}/{pdcl:Affiliation}/{pdcl:Type}/{pdcl:Name}.png" target="_blank">
 					<xsl:if test="pdcl:Unique = 'true'">*</xsl:if>
 					<xsl:value-of select="pdcl:Name"/>
 				</a>
