@@ -7,6 +7,13 @@
 		<!-- show card list name -->
 		<h2><xsl:value-of select="pdcl:CardList/pdcl:longName"/></h2>
 		
+		<!-- show download link -->
+		<p>
+			<a href="https://raw.github.com/npruehs/PinnedDown/master/resource/xml/cardlists/{/pdcl:CardList/pdcl:index}%20{/pdcl:CardList/pdcl:shortName}.pdcl">
+				(Download this card list)
+			</a>
+		</p>
+		
 		<!-- begin card list table -->
 		<table>
 			<tr align="left">
