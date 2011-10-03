@@ -32,6 +32,19 @@ namespace PinnedDownCardListEditor.View
     /// </summary>
     public partial class MainForm : Form
     {
+        #region Delegates
+        /// <summary>
+        /// Method signature for adding new cards to the card table.
+        /// </summary>
+        /// <param name="card">
+        /// The card to add.
+        /// </param>
+        /// <returns>
+        /// The row index of the card within the table.
+        /// </returns>
+        delegate int AddNewCardDelegate(Card card);
+        #endregion
+
         #region Fields
         /// <summary>
         /// The controller to be notified whenever the user hits a menu button
@@ -100,20 +113,28 @@ namespace PinnedDownCardListEditor.View
 
         #region Methods
         /// <summary>
-        /// Clears the table showing the current card list and shows the
-        /// passed one instead.
+        /// Clears the card table, removing all cards.
         /// </summary>
-        /// <param name="cards">
-        /// The list of cards to show.
-        /// </param>
-        public void UpdateCardTable(List<Card> cards)
+        public void ClearCardTable()
         {
             dataGridView.Rows.Clear();
+        }
 
-            foreach (Card card in cards)
-            {
-                AddNewCardToTable(card);
-            }
+        /// <summary>
+        /// Asks the thread of this control to add the passed card to the card
+        /// table.
+        /// </summary>
+        /// <param name="card">
+        /// The card to add.
+        /// </param>
+        /// <returns>
+        /// The row index of the card within the table.
+        /// </returns>
+        public int AddNewCardToTableSync(Card card)
+        {
+            AddNewCardDelegate d = AddNewCardToTable;
+
+            return (Int32)Invoke(d, new object[] { card });
         }
 
         /// <summary>
@@ -128,7 +149,7 @@ namespace PinnedDownCardListEditor.View
         public int AddNewCardToTable(Card card)
         {
             int i = dataGridView.Rows.Add();
-
+            
             EditCardTableEntry(i, card);
 
             return i;
