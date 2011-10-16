@@ -15,3 +15,9 @@
 /src/PinnedDownModel/PinnedDownModel/obj
 /src/PinnedDownCardListEditor/PinnedDownCardListEditor/bin/Release/PinnedDownCardListEditor.vshost.exe
 /src/PinnedDownCardListEditor/PinnedDownCardListEditor/bin/Release/PinnedDownCardListEditor.vshost.exe.manifest
+/src/PinnedDownDeckEditor/PinnedDownDeckEditor/bin/Debug
+/src/PinnedDownDeckEditor/PinnedDownDeckEditor/obj
+/src/PinnedDownDeckEditor/PinnedDownDeckEditor/bin/Release/PinnedDownDeckEditor.pdb
+/src/PinnedDownDeckEditor/PinnedDownDeckEditor/bin/Release/PinnedDownDeckEditor.vshost.exe
+/src/PinnedDownDeckEditor/PinnedDownDeckEditor/bin/Release/PinnedDownDeckEditor.vshost.exe.manifest
+/src/PinnedDownDeckEditor/PinnedDownDeckEditor/bin/Release/PinnedDownModel.pdb
