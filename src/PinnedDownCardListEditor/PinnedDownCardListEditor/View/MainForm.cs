@@ -55,7 +55,8 @@ namespace PinnedDownCardListEditor.View
 
         #region Properties
         /// <summary>
-        /// The table showing all cards of the current Pinned Down card list.
+        /// Gets the table showing all cards of the current Pinned Down card
+        /// list.
         /// </summary>
         public DataGridView CardTable
         {
@@ -63,7 +64,8 @@ namespace PinnedDownCardListEditor.View
         }
 
         /// <summary>
-        /// The dialog to be shown when the user wants to save the current card list.
+        /// Gets the dialog to be shown when the user wants to save the current
+        /// card list.
         /// </summary>
         public SaveFileDialog SaveFileDialog
         {
@@ -71,7 +73,8 @@ namespace PinnedDownCardListEditor.View
         }
 
         /// <summary>
-        /// The dialog to be shown when the user wants to open another card list.
+        /// Gets the dialog to be shown when the user wants to open another
+        /// card list.
         /// </summary>
         public OpenFileDialog OpenFileDialog
         {

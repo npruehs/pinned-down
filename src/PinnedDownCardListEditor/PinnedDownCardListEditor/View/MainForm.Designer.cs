@@ -30,27 +30,27 @@
         {
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sep1ToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
+            this.openCardListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveCardListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sep2ToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sortAndRebuildIndicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutPinnedDownCardListEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonNewCard = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonOpenCardList = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSaveCardList = new System.Windows.Forms.ToolStripButton();
-            this.newCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openCardListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveCardListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sortAndRebuildIndicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonSortAndRebuildIndices = new System.Windows.Forms.ToolStripButton();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.menuStrip.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +62,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(784, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1008, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -79,10 +79,37 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // newCardToolStripMenuItem
+            // 
+            this.newCardToolStripMenuItem.Image = global::PinnedDownCardListEditor.Properties.Resources.NewDocumentHS;
+            this.newCardToolStripMenuItem.Name = "newCardToolStripMenuItem";
+            this.newCardToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.newCardToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.newCardToolStripMenuItem.Text = "Add New Card...";
+            this.newCardToolStripMenuItem.Click += new System.EventHandler(this.newCardToolStripMenuItem_Click);
+            // 
             // sep1ToolStripMenuItem
             // 
             this.sep1ToolStripMenuItem.Name = "sep1ToolStripMenuItem";
             this.sep1ToolStripMenuItem.Size = new System.Drawing.Size(201, 6);
+            // 
+            // openCardListToolStripMenuItem
+            // 
+            this.openCardListToolStripMenuItem.Image = global::PinnedDownCardListEditor.Properties.Resources.openHS;
+            this.openCardListToolStripMenuItem.Name = "openCardListToolStripMenuItem";
+            this.openCardListToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openCardListToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.openCardListToolStripMenuItem.Text = "Open Card List...";
+            this.openCardListToolStripMenuItem.Click += new System.EventHandler(this.openCardListToolStripMenuItem_Click);
+            // 
+            // saveCardListToolStripMenuItem
+            // 
+            this.saveCardListToolStripMenuItem.Image = global::PinnedDownCardListEditor.Properties.Resources.saveHS;
+            this.saveCardListToolStripMenuItem.Name = "saveCardListToolStripMenuItem";
+            this.saveCardListToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveCardListToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.saveCardListToolStripMenuItem.Text = "Save Card List...";
+            this.saveCardListToolStripMenuItem.Click += new System.EventHandler(this.saveCardListToolStripMenuItem_Click);
             // 
             // sep2ToolStripMenuItem
             // 
@@ -103,6 +130,14 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // sortAndRebuildIndicesToolStripMenuItem
+            // 
+            this.sortAndRebuildIndicesToolStripMenuItem.Image = global::PinnedDownCardListEditor.Properties.Resources.SortHS;
+            this.sortAndRebuildIndicesToolStripMenuItem.Name = "sortAndRebuildIndicesToolStripMenuItem";
+            this.sortAndRebuildIndicesToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.sortAndRebuildIndicesToolStripMenuItem.Text = "Sort and Rebuild Indices";
+            this.sortAndRebuildIndicesToolStripMenuItem.Click += new System.EventHandler(this.sortAndRebuildIndicesToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -129,38 +164,19 @@
             this.openFileDialog.FileName = "cardlist.pdcl";
             this.openFileDialog.Filter = "Pinned Down Card List|*.pdcl";
             // 
-            // toolStrip1
+            // toolStrip
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonNewCard,
             this.toolStripButtonOpenCardList,
             this.toolStripButtonSaveCardList,
             this.toolStripSeparator1,
             this.toolStripButtonSortAndRebuildIndices});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(784, 25);
-            this.toolStrip1.TabIndex = 3;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToResizeColumns = false;
-            this.dataGridView.AllowUserToResizeRows = false;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(0, 49);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersVisible = false;
-            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(784, 513);
-            this.dataGridView.TabIndex = 4;
-            this.dataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentDoubleClick);
-            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
+            this.toolStrip.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(1008, 25);
+            this.toolStrip.TabIndex = 3;
+            this.toolStrip.Text = "toolStrip1";
             // 
             // toolStripButtonNewCard
             // 
@@ -192,41 +208,6 @@
             this.toolStripButtonSaveCardList.Text = "Save Card List (Ctrl+S)";
             this.toolStripButtonSaveCardList.Click += new System.EventHandler(this.toolStripButtonSaveCardList_Click);
             // 
-            // newCardToolStripMenuItem
-            // 
-            this.newCardToolStripMenuItem.Image = global::PinnedDownCardListEditor.Properties.Resources.NewDocumentHS;
-            this.newCardToolStripMenuItem.Name = "newCardToolStripMenuItem";
-            this.newCardToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newCardToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.newCardToolStripMenuItem.Text = "Add New Card...";
-            this.newCardToolStripMenuItem.Click += new System.EventHandler(this.newCardToolStripMenuItem_Click);
-            // 
-            // openCardListToolStripMenuItem
-            // 
-            this.openCardListToolStripMenuItem.Image = global::PinnedDownCardListEditor.Properties.Resources.openHS;
-            this.openCardListToolStripMenuItem.Name = "openCardListToolStripMenuItem";
-            this.openCardListToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openCardListToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.openCardListToolStripMenuItem.Text = "Open Card List...";
-            this.openCardListToolStripMenuItem.Click += new System.EventHandler(this.openCardListToolStripMenuItem_Click);
-            // 
-            // saveCardListToolStripMenuItem
-            // 
-            this.saveCardListToolStripMenuItem.Image = global::PinnedDownCardListEditor.Properties.Resources.saveHS;
-            this.saveCardListToolStripMenuItem.Name = "saveCardListToolStripMenuItem";
-            this.saveCardListToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveCardListToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.saveCardListToolStripMenuItem.Text = "Save Card List...";
-            this.saveCardListToolStripMenuItem.Click += new System.EventHandler(this.saveCardListToolStripMenuItem_Click);
-            // 
-            // sortAndRebuildIndicesToolStripMenuItem
-            // 
-            this.sortAndRebuildIndicesToolStripMenuItem.Image = global::PinnedDownCardListEditor.Properties.Resources.SortHS;
-            this.sortAndRebuildIndicesToolStripMenuItem.Name = "sortAndRebuildIndicesToolStripMenuItem";
-            this.sortAndRebuildIndicesToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.sortAndRebuildIndicesToolStripMenuItem.Text = "Sort and Rebuild Indices";
-            this.sortAndRebuildIndicesToolStripMenuItem.Click += new System.EventHandler(this.sortAndRebuildIndicesToolStripMenuItem_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -242,21 +223,40 @@
             this.toolStripButtonSortAndRebuildIndices.Text = "Sort and Rebuild Indices";
             this.toolStripButtonSortAndRebuildIndices.Click += new System.EventHandler(this.toolStripButtonSortAndRebuildIndices_Click);
             // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToResizeColumns = false;
+            this.dataGridView.AllowUserToResizeRows = false;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(0, 49);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.Size = new System.Drawing.Size(1008, 681);
+            this.dataGridView.TabIndex = 4;
+            this.dataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentDoubleClick);
+            this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainForm";
             this.Text = "Pinned Down Card List Editor";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -275,7 +275,7 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.ToolStripMenuItem openCardListToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripButton toolStripButtonNewCard;
         private System.Windows.Forms.ToolStripButton toolStripButtonOpenCardList;
         private System.Windows.Forms.ToolStripButton toolStripButtonSaveCardList;

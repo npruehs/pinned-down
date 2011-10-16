@@ -468,7 +468,7 @@ namespace PinnedDownCardListEditor.View
 
         /// <summary>
         /// Notifies the controller that the user closed this form by clicking
-        /// the red cross icon to the top.right of the window. Hides this form
+        /// the red cross icon to the top-right of the window. Hides this form
         /// instead of disposing it.
         /// </summary>
         /// <param name="sender">
