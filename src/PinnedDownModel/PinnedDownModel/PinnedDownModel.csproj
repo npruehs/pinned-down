@@ -48,6 +48,7 @@
     <Compile Include="Cards\Equipment.cs" />
     <Compile Include="Cards\Location.cs" />
     <Compile Include="Cards\LocationTye.cs" />
+    <Compile Include="Deck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Cards\Starship.cs" />
   </ItemGroup>
